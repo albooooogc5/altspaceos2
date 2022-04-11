@@ -1,0 +1,23 @@
+FROM node:16-alpine
+
+WORKDIR /opt/mre
+
+ENV PORT=80
+ENV BASE_URL=http://altspacevros.openode.io/
+
+# daemon for cron jobs
+RUN echo 'crond' > /boot.sh
+# RUN echo 'crontab .openode.cron' >> /boot.sh
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+
+COPY package*.json ./
+
+RUN npm install --production
+
+# Bundle app source
+COPY . .
+
+CMD sh /boot.sh && npm start

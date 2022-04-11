@@ -1,0 +1,32 @@
+{
+  "name": "mre-alarm-timer",
+  "version": "0.0.4",
+  "engines": {
+    "node": "16.14.2"
+  },
+  "description": "",
+  "main": "build/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx rimraf ./build && npx tsc",
+    "start": "npm run build && node build/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.158",
+    "@types/restify": "^8.4.2",
+    "@types/semver": "^7.3.1",
+    "@types/ws": "^7.2.6",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.10"
+  },
+  "dependencies": {
+    "@microsoft/mixed-reality-extension-sdk": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "dtrace-provider": "^0.8.8",
+    "lodash": "^4.17.19",
+    "path": "^0.12.7"
+  }
+}
